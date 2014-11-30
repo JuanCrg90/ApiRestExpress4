@@ -10,6 +10,15 @@ mongoose = require('mongoose');
 //Creando una instancia de express
 var app = express();
 
+//Conexion a la base de datos
+mongoose.connect('mongodb://localhost/ApiDemo',function(err,res){
+	if(err) throw err;
+	console.log('Conexión a base de datos exitosa');
+}); 
+
+//Cargando modelos
+var empleado = require('./models/empleado')(app, mongoose);
+
 
 /*Cargando  Middleware 
 https://www.npmjs.org/package/body-parser
@@ -28,6 +37,8 @@ router.get('/',function(req,res){
 	res.send("<h1>Hello world </h1>");
 });
 
+//Cargando el router a la instancia de express
 app.use(router);
 
+//Exportando el módulo
 module.exports = app;
