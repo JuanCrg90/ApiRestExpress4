@@ -1,0 +1,17 @@
+{
+  "name": "ApiRestExpress4",
+  "version": "1.0.0",
+  "private" : true,
+  "description": "My first Rest API",
+  "main": "app.js",  
+  "author": "JuanCrg90",
+  "dependencies": {
+    "express": "~4.9.0",
+    "mongodb": "*",
+    "mongoose" : "*",
+    "body-parser": "~1.8.1",
+    "method-override" : "*",
+    "debug": "~2.0.0",
+    "supervisor" : "*"
+  }
+}
